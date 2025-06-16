@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotqueue.rabbitmq", "dotqueue.rabbitmq\dotqueue.rabbitmq.csproj", "{515D7F87-7D54-4303-BEC5-A153240CE110}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mytransit.rabbitmq", "mytransit.rabbitmq\mytransit.rabbitmq.csproj", "{515D7F87-7D54-4303-BEC5-A153240CE110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotqueue.abstractions", "dotqueue.abstractions\dotqueue.abstractions.csproj", "{A0BB6D7A-4A2D-4847-8E68-1BBA6ED92CF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mytransit.abstractions", "mytransit.abstractions\mytransit.abstractions.csproj", "{A0BB6D7A-4A2D-4847-8E68-1BBA6ED92CF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
