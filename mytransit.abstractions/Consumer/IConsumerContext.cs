@@ -10,17 +10,3 @@ public interface IConsumerContext<out T>
     
 }
 
-
-
-public class ConsumerContext<T> : IConsumerContext<T>
-{
-    public T Message { get; set; }
-
-    public string MessageId { get; set; }
-
-    public string CorrelationId { get; set; }
-
-
-
-}
-

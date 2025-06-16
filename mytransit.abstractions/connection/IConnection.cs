@@ -5,6 +5,6 @@ namespace mytransit.abstractions.connection;
 
 public interface ITransitConnection : IAsyncDisposable
 {
-    Task<IBus> GetChannel(CancellationToken cancellationToken = default);
+    Task<IBus> GetBus(CancellationToken cancellationToken = default);
 
 }
