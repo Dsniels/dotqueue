@@ -10,7 +10,7 @@ public class SetUpConsumer : ISetUpConsumer
 
     private readonly IChannel _channel;
 
-    public SetUpConsumer(IChannel channel )
+    public SetUpConsumer(IChannel channel)
     {
         _channel = channel;
 
@@ -43,6 +43,7 @@ public class SetUpConsumer : ISetUpConsumer
 
     private async Task<string> SetUpQueues(string exchangeName, CancellationToken cancellation = default)
     {
+        await _channel.ExchangeDeclareAsync(exchangeName, ExchangeType.Fanout, false, true, null, cancellationToken: cancellation);
         var queue = await _channel.QueueDeclareAsync("", false, true, true, cancellationToken: cancellation);
         await _channel.QueueBindAsync(queue.QueueName, exchangeName, "", cancellationToken: cancellation);
         return queue.QueueName;

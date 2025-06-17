@@ -25,7 +25,7 @@ public class Bus : IBus
         await _connectionManager.DisposeAsync();
     }
 
-    public async Task PublishAsync<T>(MessageEnvelope<T> message, CancellationToken cancellation = default)
+    public async Task PublishAsync<T>(T message, CancellationToken cancellation = default)
     {
         var name = typeof(T).Name;
         await SetUpExchange(name, cancellation);
@@ -33,14 +33,13 @@ public class Bus : IBus
         var body = JsonSerializer.SerializeToUtf8Bytes(message);
         var properties = new BasicProperties
         {
-            MessageId = message.MessageId,
-            CorrelationId = message.CorrelationId,
+            MessageId = Guid.NewGuid().ToString(),
+            CorrelationId = Guid.NewGuid().ToString(),
             Timestamp = new AmqpTimestamp(),
         };
 
         await _channel.BasicPublishAsync(name, routingKey: "", false, properties, body, cancellation);
     }
-
 
     private async Task SetUpExchange(string exchangeName, CancellationToken cancellation)
     {

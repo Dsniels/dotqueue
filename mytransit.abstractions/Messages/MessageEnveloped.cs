@@ -1,7 +1,7 @@
 
 namespace mytransit.abstractions.Messages;
 
-public class MessageEnvelope<T>
+public class EMessage<T>
 {
 
     public required string MessageId { get; set; }

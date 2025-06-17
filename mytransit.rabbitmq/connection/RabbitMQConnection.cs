@@ -2,7 +2,9 @@ using System;
 using Microsoft.Extensions.Options;
 using mytransit.abstractions.channel;
 using mytransit.abstractions.connection;
+using mytransit.abstractions.Consumer;
 using mytransit.rabbitmq.bus;
+using mytransit.rabbitmq.consumer;
 using RabbitMQ.Client;
 
 namespace mytransit.rabbitmq.connection;
@@ -36,5 +38,10 @@ public class RabbitMQConnection : ITransitConnection
     public Task<IBus> GetBus(CancellationToken cancellationToken = default)
     {
         return Task.FromResult<IBus>(new Bus(_channel,this));
+    }
+
+    public Task<ISetUpConsumer> GetUpConsumer(CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult<ISetUpConsumer>(new SetUpConsumer(_channel));
     }
 }
