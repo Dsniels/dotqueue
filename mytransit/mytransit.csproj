@@ -4,6 +4,11 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>MyTransit</PackageId>
+    <Version>1.0.3</Version>
+    <Authors>YO</Authors>
+    <RepositoryUrl>https://github.com/dsniels/MyTransit</RepositoryUrl>
+
   </PropertyGroup>
 
   <ItemGroup>

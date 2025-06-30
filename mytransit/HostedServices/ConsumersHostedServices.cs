@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Frozen;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using mytransit.abstractions.Consumer;

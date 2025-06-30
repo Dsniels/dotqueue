@@ -5,7 +5,7 @@ namespace mytransit.extensions.Options;
 
 public class Configurator : IConfigurator
 {
-    public List<Type> Consumers { get; set; } = new ();
+    public List<Type> Consumers { get; set; } = new();
     private readonly IServiceCollection _services;
     public Configurator(IServiceCollection services)
     {
@@ -17,6 +17,7 @@ public class Configurator : IConfigurator
     {
         var consumer = typeof(T);
         var interfaceType = consumer.GetInterfaces().FirstOrDefault(I => I.IsGenericType && I.GetGenericTypeDefinition() == typeof(IConsumer<>));
+        if (interfaceType is null) return this;
         _services.AddScoped(consumer);
         Consumers.Add(consumer);
         return this;

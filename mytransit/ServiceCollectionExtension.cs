@@ -8,9 +8,9 @@ using mytransit.extensions.HostedServices;
 using mytransit.extensions.Options;
 using mytransit.rabbitmq.connection;
 
-namespace mytransit.extensions.ServicesCollectionExtensions;
+namespace mytransit;
 
-public static class ServiceCollectionExtension
+public static class MyTransit
 {
     public static IServiceCollection AddMyTransit(this IServiceCollection services)
     {
