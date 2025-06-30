@@ -7,6 +7,5 @@ public interface IConsumerContext<out T>
     T Message { get; }
     string MessageId { get; }
     string CorrelationId { get; }
-    
 }
 
