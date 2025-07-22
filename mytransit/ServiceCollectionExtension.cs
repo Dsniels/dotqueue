@@ -12,9 +12,9 @@ namespace mytransit;
 
 public static class MyTransit
 {
-    public static IServiceCollection AddMyTransit(this IServiceCollection services)
+    public static IServiceCollection AddMyTransit(this IServiceCollection services, string connectionString)
     {
-        services.Configure<ConnectionOptions>(opts => opts.ConnectionString = "amqp:guest:guest@localhost:5672/");
+        services.Configure<ConnectionOptions>(opts => opts.ConnectionString = connectionString);
         services.TryAddSingleton<ITransitConnection>(services =>
         {
             var opts = services.GetRequiredService<IOptions<ConnectionOptions>>();
@@ -22,15 +22,15 @@ public static class MyTransit
         });
         services.AddSingleton<IBus>(services =>
         {
-            var connection = services.GetRequiredService<RabbitMQConnection>();
+            var connection = services.GetRequiredService<ITransitConnection>();
             return connection.GetBus().GetAwaiter().GetResult();
         });
         return services;
     }
 
-    public static IServiceCollection AddMyTransit(this IServiceCollection services, Action<Configurator> opts)
+    public static IServiceCollection AddMyTransit(this IServiceCollection services, string connectionString, Action<Configurator> opts)
     {
-        services.Configure<ConnectionOptions>(opts => opts.ConnectionString = "amqp://guest:guest@localhost:5672/");
+        services.Configure<ConnectionOptions>(opts => opts.ConnectionString = connectionString);
         services.AddSingleton<RabbitMQConnection>(services =>
         {
             var opts = services.GetRequiredService<IOptions<ConnectionOptions>>();

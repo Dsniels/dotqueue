@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mytransit.rabbitmq", "mytra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mytransit.abstractions", "mytransit.abstractions\mytransit.abstractions.csproj", "{A0BB6D7A-4A2D-4847-8E68-1BBA6ED92CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mytransit.extensions", "mytransit.extensions\mytransit.extensions.csproj", "{8D1C661F-430A-4684-858B-F94F935B3577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mytransit", "mytransit\mytransit.csproj", "{8D1C661F-430A-4684-858B-F94F935B3577}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
