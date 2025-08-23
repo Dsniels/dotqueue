@@ -41,13 +41,13 @@ Consumer
 using System;
 using mytransit.core.Consumer;
 
-namespace Eventsss;
+namespace Events;
 
 public class EventType
 {
     public string message { get; set; }
 }
-public class ConsumerEvent : IConsumer<EventHola>
+public class ConsumerEvent : IConsumer<EventType>
 {
     public async Task ConsumeAsync(IConsumeContext<EventType> context)
     {
